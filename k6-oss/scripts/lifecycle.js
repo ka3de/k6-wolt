@@ -1,7 +1,7 @@
 import http from 'k6/http';
 
-const nCrocodiles = 4;
-const apiURL = 'https://test-api.k6.io/';
+const N_CROCODILES = 4;
+const API_URL = 'https://test-api.k6.io/';
 
 const rand = rand10();
 console.log(`init context: (rand=${rand})`);
@@ -9,7 +9,7 @@ console.log(`init context: (rand=${rand})`);
 export function setup() {
     console.log(`setup: (rand=${rand})`);
     const crocodiles = new Array();
-    for (let i = 0; i < nCrocodiles; i++) {
+    for (let i = 0; i < N_CROCODILES; i++) {
         crocodiles.push(rand10());
     }
     return { crocodiles: crocodiles };
@@ -18,7 +18,7 @@ export function setup() {
 export default function (data) {
     console.log('default function got data: ' + JSON.stringify(data));
     for (let i = 0; i < data.crocodiles.length; i++) {
-        const res = http.get(apiURL + 'public/crocodiles/' + data.crocodiles[i]);
+        const res = http.get(API_URL + 'public/crocodiles/' + data.crocodiles[i]);
         console.log(JSON.stringify(res.body));
     }
 }
