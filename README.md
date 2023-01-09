@@ -7,4 +7,4 @@ I have divided my exploration of k6 in 3 sections:
 - [k6 Cloud](./k6-cloud/): Experiences using k6 Cloud.
 - [k6 Ext](./k6-ext/): Experiences extending k6 functionality.
 
-All the testing has been performed by using k6 [v0.42.0](https://github.com/grafana/k6/releases/tag/v0.42.0) version.
+All the testing has been performed by using k6 [v0.42.0](https://github.com/grafana/k6/releases/tag/v0.42.0) version and xk6-browser [v0.7.0](https://github.com/grafana/xk6-browser/releases/tag/v0.7.0).
